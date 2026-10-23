@@ -1,0 +1,62 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "bleedShortfallMm": "#0",
+      "resolutionMeetsInput": "true"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "pixelWidth": "2000"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "resolutionMeetsInput": "false"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "bleedMm": "2"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "bleedShortfallMm": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "trimWidthMm": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "pixelWidth": "3000",
+      "trimWidthMm": "248",
+      "bleedMm": "3"
+    },
+    "expected": {
+      "decision": "PASS",
+      "widthDpi": "#300"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "pixelWidth": "3000",
+      "trimWidthMm": "248.000001",
+      "bleedMm": "3"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "widthDpi": "#300"
+    },
+    "error": false
+  }
+]

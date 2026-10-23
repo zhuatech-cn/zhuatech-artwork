@@ -1,0 +1,106 @@
+{
+  "slug": "artwork",
+  "title": "印刷出血与有效分辨率核对",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "pixelWidth",
+      "label": "原图宽像素",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1000000"
+    },
+    {
+      "key": "pixelHeight",
+      "label": "原图高像素",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1000000"
+    },
+    {
+      "key": "trimWidthMm",
+      "label": "裁切宽mm",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0.000001",
+      "max": "1000000000000"
+    },
+    {
+      "key": "trimHeightMm",
+      "label": "裁切高mm",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0.000001",
+      "max": "1000000000000"
+    },
+    {
+      "key": "bleedMm",
+      "label": "单边出血mm",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "requiredBleedMm",
+      "label": "合同最小出血mm",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "minimumDpi",
+      "label": "合同最低DPI",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "10000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "widthDpi",
+      "label": "宽向有效DPI"
+    },
+    {
+      "key": "heightDpi",
+      "label": "高向有效DPI"
+    },
+    {
+      "key": "bleedShortfallMm",
+      "label": "单边出血缺口mm"
+    },
+    {
+      "key": "resolutionMeetsInput",
+      "label": "分辨率符合输入阈值"
+    }
+  ],
+  "description": "从输入像素、裁切尺寸和出血尺寸直接比较有效DPI，不将展示舍入值用于通过判定；不解析真实稿件。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "pixelWidth": "2400",
+        "pixelHeight": "3300",
+        "trimWidthMm": "190",
+        "trimHeightMm": "260",
+        "bleedMm": "3",
+        "requiredBleedMm": "3",
+        "minimumDpi": "300"
+      }
+    ]
+  }
+}
